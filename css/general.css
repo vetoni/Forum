@@ -1,0 +1,166 @@
+
+/* Common styles */
+
+body {
+    background: #f8f8f8;
+    font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;    
+    color: #555555;
+}
+a {
+    color: #105289;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+header, nav, .content, footer {
+    width: 980px;
+    margin: 0 auto;
+}
+nav, .content, footer {
+    padding: 5px;
+}
+header:after,
+nav:after{
+    content: '';
+    display:block;
+    clear: both;
+}
+
+/* Header  */
+
+header > * {
+    line-height: 100px;
+}
+header a {
+    float: left;
+    margin: 0;         
+    color: #555555;
+    font-size: 2em;
+}
+header a:hover {
+    text-decoration: none;
+}
+header form {
+    float: right;        
+}
+header input {
+    width: 190px;
+    padding: 5px;
+}
+
+/* Navigation */
+
+nav {
+    color: #7d7d7d;
+    background: #f0f0f0;
+    border: 1px solid #dad9d9;
+    border-radius: 4px 4px 0 0;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul.left {
+    float: left;
+}
+nav ul.right {
+    float: right;
+}
+nav ul > li {
+    float: left;      
+}
+nav ul > li > a {    
+    color: #7d7d7d;
+    padding: 10px 15px;
+    display: block;
+}
+nav ul > li > a:hover {
+    text-decoration: none;
+}
+nav ul > li.active {
+    background: rgba(255, 255, 255, 0.72);
+}
+nav ul > li:hover > a {
+    color: #105289;
+}
+
+/* Content */
+
+.content {
+    border-left: 1px solid #dad9d9;
+    border-right: 1px solid #dad9d9;
+    border-bottom: 1px solid #dad9d9;
+    border-radius: 0 0 4px 4px;
+    background: white;
+    font-size: .8em;
+}
+.upperLinks {
+    margin-bottom: 10px;
+}
+
+/* Categories */
+
+.categories > h1 {
+    background: #80bee7;
+    border: 1px solid #3498db;
+    box-shadow: inset 0px 1px 0 #b8dbf2;
+    border-radius: 3px;    
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: normal;    
+    color: white;
+    margin: 0;
+}
+.categories ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+.categories ul > li:not(:last-child){
+    border-bottom: 1px solid #e1e1e1;
+}
+.categories ul > li > div {
+    vertical-align: middle;
+    display: inline-block;
+    box-sizing: border-box;            
+}
+.categories ul > li:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.categories .state {    
+    width: 10%;
+    padding-left: 10px;
+}
+.categories .description {   
+    width: 40%;
+}
+.categories .topics-count {
+    width: 10%;
+}
+.categories .posts-count {
+    width: 10%;
+}
+.categories .description > *,
+.categories .topics-count > *,
+.categories .posts-count > *,
+.categories .last-post > * {
+    display: block;     
+}
+
+/* Site info & footer */
+footer {
+    font-size: .8em;
+    text-align: center;
+}
+.siteInfo {
+    text-align: center;
+}
+.siteInfo > * {
+    display: block;
+}
