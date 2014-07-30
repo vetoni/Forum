@@ -1,5 +1,5 @@
 <?php
-// это класс репозиторий)
+
 class repository {
 
     protected $con;

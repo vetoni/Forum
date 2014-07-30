@@ -10,8 +10,8 @@
     <body>
         <?php
         include_once "./lib/topicRepository.php";
-        $rep = new topicRepository();
-        $posts = $rep->getPosts();
+        $topicRep = new topicRepository();
+        $posts = $topicRep->getPosts();
         foreach ($posts as $post) {
             ?>
             <p><?= $post['body'] ?></p>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <?php
 include_once "./lib/forumRepository.php";
-$rep = new forumRepository();
-$sections = $rep->getSections();
-$forums = $rep->getForums();
+$topicRep = new forumRepository();
+$sections = $topicRep->getSections();
+$forums = $topicRep->getForums();
 ?>
 <html>
     <head>
         <meta charset="utf-8">
         <title>
-            Какойто форум
+            Какойто форум | Главная
         </title>
         <link href="css/general.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -18,27 +18,14 @@ $forums = $rep->getForums();
     </head>
     <body>
         <header>
-            <a href="#">
-                Название сайта
-            </a>
-            <form>
-                <input type="search" placeholder="Ключевые слова">
-            </form>
+            <?php include_once './include/header.inc.php'; ?>
         </header>
         <nav>
-            <ul class="left">
-                <li class="active"><a href="#"><i class="fa fa-home"></i> Домашняя</a></li>
-                <li><a href="#"><i class="fa fa-group"></i> Пользователи</a></li>
-            </ul>
-            <ul class="right">
-                <li><a href="#"><i class="fa fa-plus"></i> Регистрация</a></li>
-                <li><a href="#"><i class="fa fa-sign-in"></i> Вход</a></li>
-            </ul>
+            <?php include_once './include/menu.inc.php'; ?>
         </nav>
         <div class="content">
             <div class="upperLinks">
-                <a href="#">Сообщения без ответов</a>
-                • 
+                <a href="#">Сообщения без ответов</a> • 
                 <a href="#">Активные темы</a>
             </div>
 
@@ -80,15 +67,11 @@ $forums = $rep->getForums();
                 </section>
                 <?php
             }
-            ?>
-            <div class="siteInfo">
-                POWERED BY
-                <a href="#">Клуб анонимных программистов</a>
-            </div>            
+            include_once './include/siteInfo.inc.php';
+            ?>            
         </div>
-        <footer>
-            Style by
-            <a href="#">Anonymous user</a>            
-        </footer>        
+        <?php
+        include_once './include/footer.inc.php';
+        ?>
     </body>
 </html>

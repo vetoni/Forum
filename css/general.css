@@ -141,9 +141,11 @@ nav ul > li:hover > a {
     width: 40%;
 }
 .categories .topics-count {
+    text-align: center;
     width: 10%;
 }
 .categories .posts-count {
+    text-align: center;
     width: 10%;
 }
 .categories .description > *,

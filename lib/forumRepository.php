@@ -13,5 +13,10 @@ class forumRepository extends repository {
         $this->data = $this->runQuery('SELECT * FROM forum');
         return $this->fetchArray();
     }
+    
+    function getForum($id) {
+        $this->data = $this->runQuery("SELECT * FROM forum WHERE id = $id");
+        return $this->fetchArray()[0];
+    }
 
 }
