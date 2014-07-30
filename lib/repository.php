@@ -6,31 +6,34 @@ class repository {
     protected $data;
 
     function __construct() {
-        $this->con = mysql_connect('localhost', 'root', '') or die(mysql_error());
-        mysql_select_db('forumdb', $this->con) or die(mysql_error());
-        mysql_query('SET NAMES utf8', $this->con);
+        $this->con = new mysqli('localhost', 'root', '', 'forumdb');
+        if (mysqli_connect_errno()) {
+            die('Connection error: ' . mysqli_connect_error());
+        }
+        $this->con->query("SET NAMES utf8");
     }
 
     function runQuery($query) {
-        $result = mysql_query($query, $this->con);
-        if(!$result) {
-            die(mysql_error());
-            
+        $result = $this->con->query($query);
+        if (!$result) {
+            die("SQL error: " . mysqli_error($this->con));
         }
         return $result;
     }
 
     function fetchArray() {
         $result = array();
-        while ($rec = mysql_fetch_array($this->data)) {
+        while ($rec = mysqli_fetch_array($this->data)) {
             $result[] = $rec;
         }
         return $result;
     }
 
     function __destruct() {
-        mysql_free_result($this->data);
-        if(is_resource($this->con))mysql_close($this->con);
+        if (isset($this->data)) {
+            mysqli_free_result($this->data);
+        }
+        $this->con->close();
     }
 
 }
